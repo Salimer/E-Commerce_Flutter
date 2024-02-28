@@ -1,4 +1,5 @@
 import 'package:e_commerce_flutter/data/fake.dart';
+import 'package:e_commerce_flutter/model/product.dart';
 import 'package:e_commerce_flutter/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 
