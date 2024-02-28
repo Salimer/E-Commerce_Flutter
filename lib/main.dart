@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/screens/categories.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +32,61 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Scaffold(
+        body: Categories(),
+      ),
+    );
+  }
+}
+
+class FullScreen extends StatelessWidget {
+  const FullScreen({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Expanded(
+                child: Image.network(
+                  'https://static01.nyt.com/images/2020/06/30/business/30india-tech-1/30india-tech-1-articleLarge.jpg?quality=75&auto=webp&disable=upscale',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image.network(
+                  'https://static01.nyt.com/images/2020/06/30/business/30india-tech-1/30india-tech-1-articleLarge.jpg?quality=75&auto=webp&disable=upscale',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Expanded(
+                child: Image.network(
+                  'https://static01.nyt.com/images/2020/06/30/business/30india-tech-1/30india-tech-1-articleLarge.jpg?quality=75&auto=webp&disable=upscale',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image.network(
+                  'https://static01.nyt.com/images/2020/06/30/business/30india-tech-1/30india-tech-1-articleLarge.jpg?quality=75&auto=webp&disable=upscale',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
