@@ -8,23 +8,28 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-              onTap: () {
-                print('tapped');
-                Navigator.push(context, MaterialPageRoute(builder: (context) => CategoryProducts(),),);
-              },
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Center(
-                  child: Text(
-                    categoryName,
-                    style: const TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
-            );
+      onTap: () {
+        print('tapped');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CategoryProducts(),
+          ),
+        );
+      },
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Colors.blue,
+        ),
+        child: Center(
+          child: Text(
+            categoryName,
+            style: const TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
