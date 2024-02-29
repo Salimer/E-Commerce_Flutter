@@ -1,7 +1,9 @@
+import 'package:e_commerce_flutter/model/product.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsTable extends StatelessWidget {
-  const ProductDetailsTable({super.key});
+  final Product item;
+  const ProductDetailsTable({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,11 @@ class ProductDetailsTable extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child: Text('Image'),
+              child: SizedBox(
+                width: 300,
+                height: 300,
+                child: Image.network(item.image),
+              ),
             ),
             Table(
               border: TableBorder.all(color: Colors.black),
@@ -28,7 +34,7 @@ class ProductDetailsTable extends StatelessWidget {
                     TableCell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('Product1'),
+                        child: Text(item.title),
                       ),
                     )
                   ],
@@ -44,7 +50,7 @@ class ProductDetailsTable extends StatelessWidget {
                     TableCell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('Product1'),
+                        child: Text(item.description),
                       ),
                     )
                   ],
@@ -60,7 +66,7 @@ class ProductDetailsTable extends StatelessWidget {
                     TableCell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('Product1'),
+                        child: Text(item.category),
                       ),
                     )
                   ],
@@ -76,7 +82,7 @@ class ProductDetailsTable extends StatelessWidget {
                     TableCell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('Product1'),
+                        child: Text('\$${item.price.toString()}'),
                       ),
                     )
                   ],
