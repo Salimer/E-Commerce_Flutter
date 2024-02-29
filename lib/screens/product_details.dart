@@ -32,7 +32,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         future: futureProduct,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Text(snapshot.data!.title);
+            return ProductDetailsTable(item: snapshot.data!);
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
