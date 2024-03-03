@@ -1,5 +1,6 @@
 import 'package:e_commerce_flutter/data/fake.dart';
 import 'package:e_commerce_flutter/widgets/category_item.dart';
+import 'package:e_commerce_flutter/widgets/future_builders/categories.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget {
@@ -14,17 +15,7 @@ class Categories extends StatelessWidget {
         leading: const Text('leading'),
         title: const Text('Categories'),
       ),
-      body: GridView(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-        ),
-        children: [
-          for (String category in categories)
-            CategoryItem(categoryName: category)
-        ],
-      ),
+      body: const CategoriesBuilder(),
     );
   }
 }
