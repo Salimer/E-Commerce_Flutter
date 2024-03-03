@@ -2,7 +2,8 @@ import 'package:e_commerce_flutter/widgets/future_builders/category_products.dar
 import 'package:flutter/material.dart';
 
 class CategoryProducts extends StatelessWidget {
-  const CategoryProducts({super.key});
+  final String categoryName;
+  const CategoryProducts({super.key, required this.categoryName});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,9 @@ class CategoryProducts extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Text('Category Products'),
+        title: Text('$categoryName Products'),
       ),
-      body: const CategoryProductsBuilder(),
+      body: CategoryProductsBuilder(categoryName: categoryName),
     );
   }
 }
