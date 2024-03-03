@@ -1,5 +1,3 @@
-import 'package:e_commerce_flutter/data/fake.dart';
-import 'package:e_commerce_flutter/widgets/category_item.dart';
 import 'package:e_commerce_flutter/widgets/future_builders/categories.dart';
 import 'package:flutter/material.dart';
 
