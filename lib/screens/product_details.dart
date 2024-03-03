@@ -1,5 +1,6 @@
 import 'package:e_commerce_flutter/model/product.dart';
 import 'package:e_commerce_flutter/services/products.dart';
+import 'package:e_commerce_flutter/widgets/future_builders/product_details.dart';
 import 'package:e_commerce_flutter/widgets/product_details_table.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     futureProduct = fetchProduct();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -28,19 +30,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         title: const Text('Product Details'),
       ),
-      body: FutureBuilder<Product>(
-        future: futureProduct,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ProductDetailsTable(item: snapshot.data!);
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          }
-
-          // By default, show a loading spinner.
-          return Center(child: const CircularProgressIndicator());
-        },
-      ),
+      body: const ProductDetailsBuilder(),
     );
   }
 }
