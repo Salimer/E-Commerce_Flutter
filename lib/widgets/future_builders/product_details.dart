@@ -22,17 +22,17 @@ class _ProductDetailsBuilderState extends State<ProductDetailsBuilder> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Product>(
-        future: futureProduct,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ProductDetailsTable(item: snapshot.data!);
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          }
+      future: futureProduct,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return ProductDetailsTable(item: snapshot.data!);
+        } else if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+        }
 
-          // By default, show a loading spinner.
-          return const Center(child: CircularProgressIndicator());
-        },
-      );
+        // By default, show a loading spinner.
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
   }
 }
