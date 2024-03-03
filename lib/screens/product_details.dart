@@ -26,7 +26,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text('Product Details'),
+        title: const Text('Product Details'),
       ),
       body: FutureBuilder<Product>(
         future: futureProduct,
