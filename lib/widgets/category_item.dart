@@ -9,11 +9,10 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('tapped');
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => CategoryProducts(),
+            builder: (context) => CategoryProducts(categoryName: categoryName),
           ),
         );
       },
