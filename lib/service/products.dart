@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:e_commerce_flutter/model/product.dart';
 
-Future<Product> fetchProduct() async {
+Future<Product> fetchProduct({required int id}) async {
   final response =
-      await http.get(Uri.parse('https://fakestoreapi.com/products/1'));
+      await http.get(Uri.parse('https://fakestoreapi.com/products/$id'));
 
   if (response.statusCode == 200) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -13,9 +13,10 @@ Future<Product> fetchProduct() async {
   }
 }
 
-Future<List<Product>> fetchCategoryProducts() async {
-  final response = await http
-      .get(Uri.parse('https://fakestoreapi.com/products/category/jewelery'));
+Future<List<Product>> fetchCategoryProducts(
+    {required String categoryName}) async {
+  final response = await http.get(
+      Uri.parse('https://fakestoreapi.com/products/category/$categoryName'));
 
   if (response.statusCode == 200) {
     final List<dynamic> productListData =
