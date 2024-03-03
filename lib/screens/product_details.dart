@@ -23,7 +23,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text('Product Details'),
@@ -38,7 +38,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           }
 
           // By default, show a loading spinner.
-          return const CircularProgressIndicator();
+          return Center(child: const CircularProgressIndicator());
         },
       ),
     );
