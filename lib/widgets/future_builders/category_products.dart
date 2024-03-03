@@ -4,7 +4,8 @@ import 'package:e_commerce_flutter/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoryProductsBuilder extends StatefulWidget {
-  const CategoryProductsBuilder({super.key});
+  final String categoryName;
+  const CategoryProductsBuilder({super.key, required this.categoryName});
 
   @override
   State<CategoryProductsBuilder> createState() =>
@@ -17,7 +18,8 @@ class _CategoryProductsBuilderState extends State<CategoryProductsBuilder> {
   @override
   void initState() {
     super.initState();
-    futureCategoryProducts = fetchCategoryProducts();
+    futureCategoryProducts =
+        fetchCategoryProducts(categoryName: widget.categoryName);
   }
 
   @override
