@@ -4,7 +4,8 @@ import 'package:e_commerce_flutter/widgets/product_details_table.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsBuilder extends StatefulWidget {
-  const ProductDetailsBuilder({super.key});
+  final int id;
+  const ProductDetailsBuilder({super.key, required this.id});
 
   @override
   State<ProductDetailsBuilder> createState() => _ProductDetailsBuilderState();
@@ -16,7 +17,7 @@ class _ProductDetailsBuilderState extends State<ProductDetailsBuilder> {
   @override
   void initState() {
     super.initState();
-    futureProduct = fetchProduct();
+    futureProduct = fetchProduct(id: widget.id);
   }
 
   @override
@@ -24,14 +25,13 @@ class _ProductDetailsBuilderState extends State<ProductDetailsBuilder> {
     return FutureBuilder<Product>(
       future: futureProduct,
       builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return ProductDetailsTable(item: snapshot.data!);
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator();
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');
+        } else {
+          return ProductDetailsTable(item: snapshot.data!);
         }
-
-        // By default, show a loading spinner.
-        return const Center(child: CircularProgressIndicator());
       },
     );
   }
