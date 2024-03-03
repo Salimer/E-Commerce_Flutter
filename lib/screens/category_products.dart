@@ -1,7 +1,6 @@
-import 'package:e_commerce_flutter/data/fake.dart';
 import 'package:e_commerce_flutter/model/product.dart';
 import 'package:e_commerce_flutter/service/products.dart';
-import 'package:e_commerce_flutter/widgets/product_item.dart';
+import 'package:e_commerce_flutter/widgets/future_builders/category_products.dart';
 import 'package:flutter/material.dart';
 
 class CategoryProducts extends StatefulWidget {
@@ -25,54 +24,15 @@ class _CategoryProductsState extends State<CategoryProducts> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('Category Products'),
+        title: const Text('Category Products'),
       ),
-      body: FutureBuilder<List<Product>>(
-        future: futureCategoryProducts,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          } else if (snapshot.hasError) {
-            return Text('Error: ${snapshot.error}');
-          } else {
-            final data = snapshot.data!;
-
-            return GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-              ),
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                final product = data[index];
-
-                return ProductItem(product: product);
-              },
-            );
-          }
-        },
-      ),
+      body: const CategoryProductsBuilder()
     );
   }
 }
 
-
-// GridView.count(
-//         mainAxisSpacing: 10,
-//         crossAxisSpacing: 10,
-//         crossAxisCount: 2,
-//         children: [
-//           for (Product product in products)
-//             ProductItem(
-//               product: product,
-//             )
-//         ],
-//       ),
