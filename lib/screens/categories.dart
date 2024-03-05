@@ -10,7 +10,6 @@ class Categories extends StatelessWidget {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue[50],
-        leading: const Text('leading'),
         title: const Text('Categories'),
       ),
       body: const CategoriesBuilder(),
