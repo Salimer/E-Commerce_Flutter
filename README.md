@@ -13,7 +13,10 @@
   
   <br/>
 <h1 align="center">Simple E-Commerce app</h1>
-<img width="467" alt="Screenshot 2024-02-27 at 09 17 57" src="https://github.com/Salimer/ToDoList-Flutter/assets/52242629/e136dbf5-5dde-44b1-ba6c-f655d53ed35d">
+<img width="467" alt="Screenshot 2024-03-05 at 09 31 37" src="https://github.com/Salimer/E-Commerce_Flutter/assets/52242629/2027272c-19c5-4cb4-9ecd-3c714bb4610d">
+<img width="467" alt="Screenshot 2024-03-05 at 09 48 04" src="https://github.com/Salimer/E-Commerce_Flutter/assets/52242629/731701a5-7f40-4b19-8356-d84b6be7a34d">
+<img width="467" alt="Screenshot 2024-03-05 at 09 32 43" src="https://github.com/Salimer/E-Commerce_Flutter/assets/52242629/d5486299-aeb7-4a2e-82fb-97145991a9d4">
+<img width="467" alt="Screenshot 2024-03-05 at 09 33 38" src="https://github.com/Salimer/E-Commerce_Flutter/assets/52242629/593282eb-f2e7-44e6-82aa-4e5ccaf2d3c7">
 </div>
 
 
