@@ -3,6 +3,7 @@ import 'package:e_commerce_flutter/core/methods/methods.dart';
 import 'package:e_commerce_flutter/features/home/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/gen/assets.gen.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -26,20 +27,7 @@ class HomeView extends StatelessWidget {
                 CategoryIconWidget(iconPath: Assets.icons.notificationsIcon)
               ],
             ),
-            SizedBox(
-              height: 200,
-              child: InfiniteCarousel.builder(
-                
-                  itemCount: products.length,
-                  itemExtent: 200,
-                  itemBuilder: (context, itemIndex, realIndex) {
-                    return Container(
-                      
-                      color: Colors.black,
-                      child: Text(products[itemIndex].title, style: TextStyle(color: Colors.white),)
-                    );
-                  }),
-            )
+            Expanded(child: DiscountAdWidget())
           ],
         ),
       ),
