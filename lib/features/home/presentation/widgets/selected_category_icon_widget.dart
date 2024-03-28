@@ -12,12 +12,12 @@ class SelectedCategoryIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: tappedCategory, width: 2),
+        border: Border.all(color: deepBrown, width: 2),
         shape: BoxShape.circle,
       ),
       child: CategoryIconWidget(
         iconPath: Assets.icons.notificationsIcon,
-        backgroundColor: tappedCategory,
+        backgroundColor: deepBrown,
         iconColor: Colors.white,
       ),
     );
