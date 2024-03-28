@@ -15,6 +15,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Bell_pin.svg
   String get bellPin => 'assets/icons/Bell_pin.svg';
 
+  /// File path: assets/icons/discount.svg
+  String get discount => 'assets/icons/discount.svg';
+
   /// File path: assets/icons/drawerIcon.svg
   String get drawerIcon => 'assets/icons/drawerIcon.svg';
 
@@ -22,7 +25,7 @@ class $AssetsIconsGen {
   String get notificationsIcon => 'assets/icons/notificationsIcon.svg';
 
   /// List of all assets
-  List<String> get values => [bellPin, drawerIcon, notificationsIcon];
+  List<String> get values => [bellPin, discount, drawerIcon, notificationsIcon];
 }
 
 class $AssetsImagesGen {
