@@ -6,10 +6,12 @@ class CategoryIconWidget extends StatelessWidget {
   final String iconPath;
   final Color backgroundColor;
   final Color iconColor;
-  const CategoryIconWidget(
-      {super.key,
-      required this.iconPath,
-      this.backgroundColor = unTappedCategory, this.iconColor = categoryIcon});
+  const CategoryIconWidget({
+    super.key,
+    required this.iconPath,
+    this.backgroundColor = unTappedCategory,
+    this.iconColor = categoryIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
