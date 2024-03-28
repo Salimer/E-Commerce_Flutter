@@ -1,6 +1,7 @@
 import 'package:e_commerce_flutter/core/constants/constants.dart';
 import 'package:e_commerce_flutter/core/methods/methods.dart';
 import 'package:e_commerce_flutter/features/home/presentation/widgets/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/gen/assets.gen.dart';
 import 'package:flutter/widgets.dart';
@@ -27,7 +28,7 @@ class HomeView extends StatelessWidget {
                 CategoryIconWidget(iconPath: Assets.icons.notificationsIcon)
               ],
             ),
-            Expanded(child: DiscountAdWidget())
+            DiscountAdWidget()
           ],
         ),
       ),
